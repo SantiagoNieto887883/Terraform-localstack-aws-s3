@@ -45,7 +45,7 @@ bucket_Name = "Nombre-bucket-S3"
 
 # reconfigurar el backend en tu terraform (opcional)
 
-terraform init -reconfigure -backend-config=../../env/dev/backend.tfvars
+terraform init -reconfigure -backend-config=../../ENVIRONMETS/dev/backend.tfvars
 
 ## Comandos de despliegue
 
