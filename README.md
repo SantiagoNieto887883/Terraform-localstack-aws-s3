@@ -17,6 +17,12 @@ WSL --install
 https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
 
 
+## clonar el repositorio
+
+```bash
+git clone https://github.com/SantiagoNieto887883/Terraform-localstack-aws-s3.git
+```
+
 ## 1) levanta ambiente localstack en docker
 
 Ejecuta el siguiente comando, esto levanta el ambiente con el documento compose
