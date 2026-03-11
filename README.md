@@ -24,41 +24,26 @@ Entra a la instancia para probrar comandos de localstack
 
 ```bash
 docker exec terraform-localstack-aws-localstack-1 sh -lc "awslocal ec2 describe-security-groups"
+```
+O
 
-#o
-
+```bash
 docker exec -it terraform-localstack-aws-localstack-1 sh
 
 #y
 
 awslocal ec2 describe-security-groups
-
-#luego sales del contenedor 
-
-exit
-
 ```
 
-# Authentication
-
-Debes autenticarte con tus credenciales de AWS (SSO o Secret key, access key) (usa las de localstack)
+luego sales del contenedor 
 
 ```bash
-aws configure --profile <tu perfil>
-
-o
-
-aws configure sso --profile <tu perfil>
-
+exit
 ```
-
-El comando anterior te debe solicitar los valores de Secret key, access key.
-
-Si utilizas SSO consulta en llaves de inicio de sesion los valores: (URL SSO, REGION)
 
 ---
 
-## (SOLO PARA AMBIENTE LOCALSTACK)
+## (configurar credenciales SOLO PARA AMBIENTE LOCALSTACK)
 
 Antes de correr terraform init
 
@@ -89,6 +74,23 @@ AWS_SECRET_ACCESS_KEY=test
 AWS_DEFAULT_REGION=us-east-1
 ```
 ---
+
+# Authentication
+
+Debes autenticarte con tus credenciales de AWS (SSO o Secret key, access key) (usa las de localstack)
+
+```bash
+aws configure --profile <tu perfil>
+
+o
+
+aws configure sso --profile <tu perfil>
+
+```
+
+El comando anterior te debe solicitar los valores de Secret key, access key.
+
+Si utilizas SSO consulta en llaves de inicio de sesion los valores: (URL SSO, REGION)
 
 ## Comandos de despliegue
 
