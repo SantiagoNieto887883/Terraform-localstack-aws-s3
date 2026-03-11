@@ -2,9 +2,20 @@
 
 # Antes de inciar
 
-** Instala AWS CLI
+** Instala AWS CLIv2
+
+https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+
+** WSL2 (si estas en windows)
+
+```bash
+WSL --install
+```
 
 ** Instala terraform
+
+https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+
 
 ## 1) levanta ambiente localstack en docker
 
