@@ -143,8 +143,10 @@ terraform init -backend-config=../../ENVIRONMETS/prod/backend.tfvars
 terraform plan -var-file=../../ENVIRONMETS/prod/terraform.tfvars -out tfplan
 
 ## ver plan
-terraform show tfplan > plan.txt
+terraform show -no-color tfplan > plan.txt
 
+
+## aplicar plan
 terraform apply tfplan
 ```.
 ```
