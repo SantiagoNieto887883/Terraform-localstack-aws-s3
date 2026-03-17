@@ -122,6 +122,11 @@ https://github.com/SantiagoNieto887883/Terraform-localstack-aws/tree/main/IAC/Te
 cd IAC/terraform/live/dev
 terraform init -backend-config=../../ENVIRONMETS/dev/backend.tfvars
 terraform plan -var-file=../../ENVIRONMETS/dev/terraform.tfvars -out tfplan
+
+## ver plan
+terraform show tfplan > plan.txt
+
+
 terraform apply tfplan
 ```
 
@@ -130,6 +135,10 @@ terraform apply tfplan
 cd IAC/terraform/live/prod
 terraform init -backend-config=../../ENVIRONMETS/prod/backend.tfvars
 terraform plan -var-file=../../ENVIRONMETS/prod/terraform.tfvars -out tfplan
+
+## ver plan
+terraform show tfplan > plan.txt
+
 terraform apply tfplan
 ```.
 ```
