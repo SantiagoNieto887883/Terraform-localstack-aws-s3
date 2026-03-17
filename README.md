@@ -105,6 +105,12 @@ aws configure sso --profile <tu perfil>
 
 ```
 
+# verifica que estes en la cuenta:
+
+```bash
+aws sts get-caller-identity --profile <tu perfil>
+```
+
 El comando anterior te debe solicitar los valores de Secret key, access key.
 
 Si utilizas SSO consulta en llaves de inicio de sesion los valores: (URL SSO, REGION)
