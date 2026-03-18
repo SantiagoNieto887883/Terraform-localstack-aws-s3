@@ -6,3 +6,4 @@ variable "aws_region" { type = string }
 
 #S3
 variable "bucket_Name" { type = string}
+variable "force_destroy" { type = bool}

@@ -22,13 +22,16 @@ provider "aws" {
   skip_requesting_account_id  = true
   s3_use_path_style           = true
   
-
+# ---------------------------------------------------
+# usar endopints para ambiente localstack
 # Endpoints
-  endpoints {
-    s3  = "http://localhost:4566"
-    iam = "http://localhost:4566"
-    sts = "http://localhost:4566"
-  }
+  #endpoints {
+   # s3  = "http://localhost:4566"
+   # iam = "http://localhost:4566"
+   # sts = "http://localhost:4566"
+  #}
+# ---------------------------------------------------
+
 
 # TAGS
   default_tags {
