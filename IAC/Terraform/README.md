@@ -45,11 +45,3 @@ aws_region = "tu region"
 bucket_Name = "Nombre-bucket-S3"
 
 ```
----
-# DESTRUYE
-
-```bash
-
-terraform destroy -var-file=../../ENVIRONMENTS/dev/terraform.tfvars
-
-```
