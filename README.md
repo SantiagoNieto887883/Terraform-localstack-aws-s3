@@ -199,3 +199,12 @@ aws --endpoint-url=http://localhost:4566 s3 ls s3://test-bucket-local/images/
 Abre:
 
 http://localhost:8080
+
+---
+# DESTRUYE
+
+```bash
+
+terraform destroy -var-file=../../ENVIRONMENTS/dev/terraform.tfvars
+
+```
