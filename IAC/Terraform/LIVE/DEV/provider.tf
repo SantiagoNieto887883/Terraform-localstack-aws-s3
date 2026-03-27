@@ -1,25 +1,22 @@
-
 provider "aws" {
-#  region                      = "us-east-1"
-#  access_key                  = "test"
-#  secret_key                  = "test"
-  region  = var.aws_region
-  profile = var.profile
+  region     = var.aws_region
+  access_key = var.use_localstack ? "test" : null
+  secret_key = var.use_localstack ? "test" : null
+  profile    = var.use_localstack ? null : var.profile
 
-  skip_credentials_validation = true
-  skip_metadata_api_check     = true
-  skip_requesting_account_id  = true
-  s3_use_path_style           = true
-  
-# ---------------------------------------------------
-# usar endopints para ambiente localstack
- #Endpoints
-  endpoints {
-    s3  = "http://localhost:4566"
-    iam = "http://localhost:4566"
-    sts = "http://localhost:4566"
+  skip_credentials_validation = var.use_localstack
+  skip_metadata_api_check     = var.use_localstack
+  skip_requesting_account_id  = var.use_localstack
+  s3_use_path_style           = var.use_localstack
+
+ dynamic "endpoints" {
+    for_each = var.use_localstack ? [1] : []
+    content {
+      s3  = "http://localhost:4566"
+      iam = "http://localhost:4566"
+      sts = "http://localhost:4566"
+    }
   }
-# ---------------------------------------------------
 
 
 # TAGS

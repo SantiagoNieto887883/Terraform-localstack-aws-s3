@@ -6,6 +6,5 @@ terraform {
       version = "~> 5.0"
     }
   }
-  # SIN backend aquí (lo pasarás en terraform init -backend-config=...)
   backend "s3" {}
 }
