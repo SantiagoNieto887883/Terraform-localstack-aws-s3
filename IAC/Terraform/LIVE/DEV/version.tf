@@ -7,5 +7,5 @@ terraform {
     }
   }
   # SIN backend aquí (lo pasarás en terraform init -backend-config=...)
-  #backend "s3" {}
+  backend "s3" {}
 }
