@@ -60,6 +60,29 @@ exit
 
 ---
 
+## Crea un bucket s3 para declarar en el backend de terraform
+
+```bash
+docker exec terraform-localstack-aws-s3-localstack-1 bash -lc "\
+awslocal s3 mb s3://tfstate-bucket && \
+awslocal s3api put-bucket-versioning \
+  --bucket tfstate-bucket \
+  --versioning-configuration Status=Enabled"
+```
+
+Confirma que el bucket se genero
+
+```bash
+docker exec terraform-localstack-aws-s3-localstack-1 bash -lc "awslocal s3 ls"
+```
+
+Deberias ver algo simple como:
+
+```bash
+2026-03-27 04:10:43 tfstate-bucket
+```
+
+
 ## (configurar credenciales SOLO PARA AMBIENTE LOCALSTACK)
 
 Antes de correr terraform init
@@ -70,6 +93,7 @@ En Git Bash, deja limpias las credenciales así:
 export AWS_ACCESS_KEY_ID=test
 export AWS_SECRET_ACCESS_KEY=test
 export AWS_DEFAULT_REGION=us-east-1
+export AWS_EC2_METADATA_DISABLED=true
 unset AWS_SESSION_TOKEN
 unset AWS_PROFILE
 ```
@@ -117,13 +141,17 @@ Si utilizas SSO consulta en llaves de inicio de sesion los valores: (URL SSO, RE
 
 ---
 
-## Comandos de despliegue
+## Antes de iniciar terraform consulta los prerrequisitos
 
 Verifica los prerrequisitos en:
 
 https://github.com/SantiagoNieto887883/Terraform-localstack-aws/tree/main/IAC/Terraform
 
-# DEV
+---
+
+## ahora desde la ruta inicial sigue los pasos
+
+# Entorno DEV
 ```bash
 cd IAC/terraform/live/dev
 terraform init -backend-config=../../ENVIRONMENTS/dev/backend.tfvars
@@ -132,11 +160,12 @@ terraform plan -var-file=../../ENVIRONMENTS/dev/terraform.tfvars -out tfplan
 ## ver plan
 terraform show -no-color tfplan > plan.txt
 
+## aplicar plan
 
 terraform apply tfplan
 ```
 
-# PROD
+# Entorno PROD
 ```bash
 cd IAC/terraform/live/prod
 terraform init -backend-config=../../ENVIRONMENTS/prod/backend.tfvars
