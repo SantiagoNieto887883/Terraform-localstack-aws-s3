@@ -126,8 +126,8 @@ https://github.com/SantiagoNieto887883/Terraform-localstack-aws/tree/main/IAC/Te
 # DEV
 ```bash
 cd IAC/terraform/live/dev
-terraform init -backend-config=../../ENVIRONMETS/dev/backend.tfvars
-terraform plan -var-file=../../ENVIRONMETS/dev/terraform.tfvars -out tfplan
+terraform init -backend-config=../../ENVIRONMENTS/dev/backend.tfvars
+terraform plan -var-file=../../ENVIRONMENTS/dev/terraform.tfvars -out tfplan
 
 ## ver plan
 terraform show -no-color tfplan > plan.txt
@@ -139,8 +139,8 @@ terraform apply tfplan
 # PROD
 ```bash
 cd IAC/terraform/live/prod
-terraform init -backend-config=../../ENVIRONMETS/prod/backend.tfvars
-terraform plan -var-file=../../ENVIRONMETS/prod/terraform.tfvars -out tfplan
+terraform init -backend-config=../../ENVIRONMENTS/prod/backend.tfvars
+terraform plan -var-file=../../ENVIRONMENTS/prod/terraform.tfvars -out tfplan
 
 ## ver plan
 terraform show -no-color tfplan > plan.txt
