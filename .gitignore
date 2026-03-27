@@ -41,7 +41,10 @@ terraform.rc
 tfplan
 *.plan
 plan.out
-*.plan.txt
+
+# Terraform plan outputs
+plan.txt
+*/plan.txt
 
 # Terraform binary plans or artifacts
 *.out
