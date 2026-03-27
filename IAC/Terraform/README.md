@@ -20,11 +20,15 @@ IAC/terraform/ENVIRONMENTS/<env>/terraform.tfvars
 #autenticación
 profile = "tu perfil"
 
-bucket         = "tu bucket"
-key            = "tu ruta/terraform.tfstate"
-region         = "tu region"
+#use localstack
+use_localstack = true #(para ambiente productivo o consola real debe ser false)
+
+#backend
+bucket         = "tfstate-bucket" #nombre del bucket que creaste al inicio
+key            = "dev/terraform.tfstate"
+region         = "us-east-1"
 #dynamodb_table = "tu tabla de dynamo"
-encrypt        = true
+encrypt        = false
 ```
 
 -- contenido terraform.tfvars--
