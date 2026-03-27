@@ -46,36 +46,6 @@ bucket_Name = "Nombre-bucket-S3"
 
 ```
 ---
-
-# Ir a la ruta de terraform para inciar desde alli
-
-cd IAC/Terraform/
-
-# reconfigurar el backend en tu terraform (opcional)
-
-terraform init -reconfigure -backend-config=../../ENVIRONMENTS/dev/backend.tfvars
-
-## Comandos de despliegue
-
-
-# DEV
-```bash
-cd IAC/terraform/live/dev
-#(si ya estas en Terraform ve directo a live <env>)
-cd live/dev
-terraform init -backend-config=../../ENVIRONMENTS/dev/backend.tfvars
-terraform plan -var-file=../../ENVIRONMENTS/dev/terraform.tfvars -out tfplan
-terraform apply tfplan
-```
-
-# PROD
-```bash
-cd IAC/terraform/live/prod
-terraform init -backend-config=../../ENVIRONMENTS/prod/backend.tfvars
-terraform plan -var-file=../../ENVIRONMENTS/prod/terraform.tfvars -out tfplan
-terraform apply tfplan
-```
-
 # DESTRUYE
 
 ```bash
