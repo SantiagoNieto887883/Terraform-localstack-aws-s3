@@ -9,13 +9,19 @@ https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 ** WSL2 (si estas en windows)
 
 ```bash
+#Desde cmd como admin
 WSL --install
 ```
 
+** Instala Docker desktop
+
+https://docs.docker.com/desktop/setup/install/windows-install/
+
+
 ** Instala terraform
-
-https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
-
+```bash
+winget install Hashicorp.Terraform
+```
 
 ## clonar el repositorio
 
